@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Amigo secreto!</title>
+</head>
+<body>
+  <p>Você sorteou: <span id="match-reveal" /></p>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const match = urlParams.get('match');
+
+    if (match) {
+      const decodedMatch = atob(match);
+      document.getElementById('match-reveal').textContent = decodedMatch;
+    } else {
+      document.getElementById('match-reveal').textContent = 'Missing match parameter.';
+    }
+  </script>
+</body>
+</html>
+
